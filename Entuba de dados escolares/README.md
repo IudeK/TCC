@@ -25,6 +25,4 @@ Este script Python realiza a importação de dados de planilhas do INEP para um 
 - As planilhas devem ter cabeçalhos padronizados, com as notas a partir da quinta coluna.
 - A filtragem é feita considerando apenas escolas do tipo `Municipal`.
 
-## Contato
 
-Para dúvidas ou melhorias, entre em contato com o desenvolvedor.
