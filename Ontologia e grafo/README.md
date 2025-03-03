@@ -39,7 +39,7 @@ Os dados são extraídos de duas tabelas PostgreSQL:
 E são adicionados ao grafo RDF através das funções `add_dados_financeiros()` e `add_dados_escolares()`.
 
 ### Exportação
-Ao final da execução, o grafo RDF é salvo no formato Turtle (`dados.ttl`).
+Ao final da execução, o grafo RDF é salvo no formato Turtle (`grafo.ttl`).
 
 ## Como Executar o Projeto
 1. Instale as bibliotecas necessárias:
