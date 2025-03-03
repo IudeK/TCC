@@ -81,8 +81,8 @@ def main():
     conn.close()
 
     # Salvar grafo RDF em formato Turtle
-    g.serialize(destination='dados.ttl', format='turtle')
-    print("Dados RDF salvos em 'dados.ttl'")
+    g.serialize(destination='grafo.ttl', format='turtle')
+    print("Dados RDF salvos em 'grafo.ttl'")
 
 def add_dados_financeiros():
     cur.execute("SELECT id, municipio, anos, ano, valor FROM dados_financeiros")
