@@ -58,21 +58,72 @@ Ao final da execução, o grafo RDF é salvo no formato Turtle (`dados.ttl`).
 
 4. O arquivo `dados.ttl` será gerado no diretório raiz.
 
-## Estrutura das Tabelas no Banco de Dados
+# Ontologia: Relação entre Investimento e Desempenho Acadêmico no Sertão dos Crateús
 
-### `dados_financeiros`
-- `id` (int)
-- `municipio` (text)
-- `anos` (text)
-- `ano` (int)
-- `valor` (decimal)
+Este documento descreve a ontologia para modelar a relação entre investimentos financeiros e o desempenho acadêmico em municípios do Sertão dos Crateús.
 
-### `dados_escolares`
-- `id` (int)
-- `municipio` (text)
-- `anos` (text)
-- `nota_matematica` (decimal)
-- `nota_portugues` (decimal)
-- `media` (decimal)
-- `ano` (int)
-- `estado` (text)
+## Prefixos
+
+```turtle
+@prefix ex: <http://grafo_relacao_investimento_x_desempenho_academico_no_sertao_dos_crateus/> .
+```
+
+## Classes
+
+```turtle
+ex:DadoFinanceiro a rdfs:Class .
+ex:DadoEscolar a rdfs:Class .
+ex:Municipio a rdfs:Class .
+ex:Ano a rdfs:Class .
+ex:NotaMatematica a rdfs:Class .
+ex:NotaPortugues a rdfs:Class .
+ex:Media a rdfs:Class .
+ex:Valor a rdfs:Class .
+ex:Estado a rdfs:Class .
+```
+
+## Propriedades
+
+```turtle
+ex:temMunicipio a rdf:Property ;
+  rdfs:domain ex:DadoEscolar ;
+  rdfs:range ex:Municipio .
+
+ex:temAno a rdf:Property ;
+  rdfs:domain ex:DadoEscolar, ex:DadoFinanceiro ;
+  rdfs:range ex:Ano .
+
+ex:temValor a rdf:Property ;
+  rdfs:domain ex:DadoFinanceiro ;
+  rdfs:range ex:Valor .
+
+ex:temNotaMatematica a rdf:Property ;
+  rdfs:domain ex:DadoEscolar ;
+  rdfs:range ex:NotaMatematica .
+
+ex:temNotaPortugues a rdf:Property ;
+  rdfs:domain ex:DadoEscolar ;
+  rdfs:range ex:NotaPortugues .
+
+ex:temMedia a rdf:Property ;
+  rdfs:domain ex:DadoEscolar ;
+  rdfs:range ex:Media .
+
+ex:temAnos a rdf:Property ;
+  rdfs:domain ex:DadoEscolar, ex:DadoFinanceiro ;
+  rdfs:range ex:Anos .
+
+ex:temEstado a rdf:Property ;
+  rdfs:domain ex:DadoEscolar ;
+  rdfs:range ex:Estado .
+
+ex:relacionadoCom a rdf:Property ;
+  rdfs:domain ex:DadoEscolar ;
+  rdfs:range ex:DadoFinanceiro .
+```
+
+## Descrição
+
+- **Classes**: As classes representam as entidades principais do modelo, como dados financeiros e escolares, municípios, anos, e outros elementos como notas e médias.
+- **Propriedades**: As propriedades representam as relações entre as classes, como `temMunicipio`, `temAno`, `temValor`, etc.
+
