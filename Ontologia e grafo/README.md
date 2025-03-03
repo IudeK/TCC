@@ -56,7 +56,7 @@ Ao final da execução, o grafo RDF é salvo no formato Turtle (`grafo.ttl`).
     python3 nome_do_arquivo.py
     ```
 
-4. O arquivo `dados.ttl` será gerado no diretório raiz.
+4. O arquivo `grafo.ttl` será gerado no diretório raiz.
 
 # Ontologia: Relação entre Investimento e Desempenho Acadêmico no Sertão dos Crateús
 
